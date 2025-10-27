@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download Bufferstack.IO SLMP OPCUA Server - Industrial automation software for PLC communication">
+    <title>Bufferstack.IO SLMP OPCUA Server - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Consolas', 'Courier New', monospace;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0a0e14;
+            background-image: 
+                linear-gradient(90deg, rgba(30, 40, 50, 0.3) 1px, transparent 1px),
+                linear-gradient(rgba(30, 40, 50, 0.3) 1px, transparent 1px);
+            background-size: 50px 50px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%);
+            border: 2px solid #2d3748;
+            border-left: 5px solid #ff8800;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ff8800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #4ade80;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .card {
+            background: #1a1f2e;
+            border: 2px solid #2d3748;
+            border-radius: 4px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #3b82f6;
+        }
+
+        .product-info h2 {
+            color: #3b82f6;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 10px;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: #2d3748;
+            color: #4ade80;
+            border: 1px solid #4ade80;
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-family: 'Consolas', monospace;
+            font-weight: bold;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .features li {
+            padding: 12px;
+            padding-left: 40px;
+            position: relative;
+            background: #0f1419;
+            border-left: 3px solid #3b82f6;
+            font-size: 0.95rem;
+        }
+
+        .features li:before {
+            content: "►";
+            position: absolute;
+            left: 15px;
+            color: #ff8800;
+            font-size: 0.9rem;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 40px;
+            background: #0f1419;
+            border: 2px solid #2d3748;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #ff8800;
+            color: #0a0e14;
+            padding: 18px 60px;
+            border: 3px solid #ffa500;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            font-family: 'Consolas', monospace;
+            box-shadow: 0 0 20px rgba(255, 136, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background: #ffa500;
+            box-shadow: 0 0 30px rgba(255, 136, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .spec-box {
+            background: #0f1419;
+            border: 1px solid #2d3748;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+        }
+
+        .spec-box h3 {
+            color: #3b82f6;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .spec-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .spec-box li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+        }
+
+        .installation-steps {
+            margin: 30px 0;
+        }
+
+        .installation-steps h3 {
+            color: #ff8800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        .installation-steps ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+
+        .installation-steps li {
+            padding: 12px 0 12px 50px;
+            position: relative;
+            color: #a0aec0;
+            counter-increment: step-counter;
+        }
+
+        .installation-steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 8px;
+            background: #2d3748;
+            color: #ff8800;
+            border: 2px solid #ff8800;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .tech-specs {
+            background: #0f1419;
+            padding: 20px;
+            border-left: 4px solid #4ade80;
+            margin: 20px 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: #718096;
+            margin-top: 40px;
+            padding: 30px;
+            background: #0f1419;
+            border-top: 2px solid #2d3748;
+        }
+
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+            border-bottom: 1px solid #3b82f6;
+        }
+
+        .footer a:hover {
+            color: #ff8800;
+            border-bottom-color: #ff8800;
+        }
+
+        .protocol-badge {
+            display: inline-block;
+            background: #0f1419;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            padding: 3px 10px;
+            font-size: 0.75rem;
+            margin: 0 5px 5px 0;
+            font-family: 'Consolas', monospace;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 25px;
+            }
+
+            .download-btn {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bufferstack.IO SLMP OPCUA Server</h1>
+            <p>Industrial Automation Gateway | PLC Protocol Bridge | Real-Time Data Acquisition</p>
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-dot"></div>
+                    <span>SYSTEM READY</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot"></div>
+                    <span>VERSION 2.0.3</span>
+                </div>
+                <div class="status-item">
+                    <div class="status-dot"></div>
+                    <span>BUILD STABLE</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="product-info">
+                <span class="version-badge">v2.0.3 STABLE</span>
+                <h2>OPC UA Server for Mitsubishi PLC Systems</h2>
+                <p style="margin-bottom: 20px; color: #a0aec0;">
+                    Industrial-grade OPC UA server implementation for Mitsubishi PLC communication using 
+                    SLMP protocol. Enables seamless integration between legacy automation systems and modern 
+                    SCADA/HMI platforms with real-time data acquisition capabilities.
+                </p>
+                
+                <div style="margin: 20px 0;">
+                    <span class="protocol-badge">SLMP/MC PROTOCOL</span>
+                    <span class="protocol-badge">OPC UA</span>
+                    <span class="protocol-badge">MODBUS TCP</span>
+                    <span class="protocol-badge">ETHERNET/IP</span>
+                </div>
+            </div>
+
+            <ul class="features">
+                <li>Native SLMP protocol for FX5U/Q series PLCs</li>
+                <li>Full OPC UA server with security profiles</li>
+                <li>Real-time monitoring and data logging</li>
+                <li>Multi-register support (D, M, X, Y, C, T)</li>
+                <li>Automatic reconnection handling</li>
+                <li>Batch read/write optimization</li>
+                <li>Web-based configuration interface</li>
+                <li>DWORD/WORD/FLOAT data type conversion</li>
+            </ul>
+
+            <div class="download-section">
+                <a href="Bufferstack.IO SLMP OPCUA Server.exe" class="download-btn" download>
+                    ⬇ DOWNLOAD INSTALLER
+                </a>
+                <div class="tech-specs" style="margin-top: 20px;">
+                    <div>FILE: Bufferstack.IO_SLMP_OPCUA_Server_v2.0.3.exe</div>
+                    <div>SIZE: ~30 MB | PLATFORM: Windows x64 | LICENSE: Commercial</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="color: #3b82f6; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #2d3748; padding-bottom: 10px;">System Specifications</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-box">
+                    <h3>System Requirements</h3>
+                    <ul>
+                        <li>Windows 10/11 (64-bit)</li>
+                        <li>4 GB RAM minimum</li>
+                        <li>50 MB disk space</li>
+                        <li>Network interface card</li>
+                        <li>Admin privileges</li>
+                    </ul>
+                </div>
+
+                <div class="spec-box">
+                    <h3>Supported PLCs</h3>
+                    <ul>
+                        <li>Mitsubishi FX5U series</li>
+                        <li>Mitsubishi Q series</li>
+                        <li>iQ-F series controllers</li>
+                        <li>iQ-R series controllers</li>
+                        <li>L series PLCs</li>
+                    </ul>
+                </div>
+
+                <div class="spec-box">
+                    <h3>Protocol Support</h3>
+                    <ul>
+                        <li>SLMP (MC Protocol)</li>
+                        <li>OPC UA 1.04</li>
+                        <li>TCP/IP communication</li>
+                        <li>Binary/ASCII modes</li>
+                        <li>TLS encryption</li>
+                    </ul>
+                </div>
+
+                <div class="spec-box">
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Real-time data streaming</li>
+                        <li>Alarm management</li>
+                        <li>Historical logging</li>
+                        <li>Multi-client support</li>
+                        <li>Web dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="installation-steps">
+                <h3>Installation Procedure</h3>
+                <ol>
+                    <li>Download installer package from link above</li>
+                    <li>Execute installer with administrator privileges</li>
+                    <li>Accept End-User License Agreement (EULA)</li>
+                    <li>Select installation directory (default: C:\Program Files)</li>
+                    <li>Complete installation wizard process</li>
+                    <li>Launch application from Start Menu shortcut</li>
+                    <li>Configure PLC connections via web interface (port 8080)</li>
+                    <li>Verify OPC UA server connection (default port 4840)</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 style="color: #ff8800; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #2d3748; padding-bottom: 10px;">About Bufferstack.IO</h2>
+            <p style="margin-bottom: 15px; color: #a0aec0;">
+                Bufferstack.IO Analytics Technology LLP develops enterprise, industrial automation software products, solutions 
+                specializing in IoT gateway systems, PLC communication protocols, and real-time data acquisition 
+                platforms. Based in Pune, India, we provide protocol conversion technologies for manufacturing 
+                and process automation industries.
+            </p>
+            <p style="color: #a0aec0;">
+                Our products  bridge legacy industrial control systems with modern IoT/Cloud infrastructure, 
+                enabling Industry 4.0 transformation through seamless connectivity and real-time monitoring.
+            </p>
+        </div>
+
+        <footer class="footer">
+            <p>
+                © 2025 Bufferstack.IO Analytics Technology LLP | Pune, Maharashtra, India<br>
+                <a href="https://bufferstack.io" target="_blank">www.bufferstack.io</a> | 
+                <a href="mailto:harshad@bufferstack.io">harshad@bufferstack.io</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #4a5568;">
+                Industrial Automation | IoT Gateway Systems | Protocol Conversion | SCADA Integration
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
+
