@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bufferstack.IO OPC UA Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4">
+        <header class="bg-blue-600 text-white p-4 rounded-lg shadow mb-6">
+            <h1 class="text-2xl font-bold">Bufferstack.IO OPC UA Server Dashboard</h1>
+            <p id="server-name" class="text-sm">Loading...</p>
+        </header>
+
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold mb-4">Server Information</h2>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <p><strong>Name:</strong> <span id="server-name-detail">Loading...</span></p>
+                <p><strong>Version:</strong> <span id="server-version">Loading...</span></p>
+                <p><strong>Uptime:</strong> <span id="server-uptime">Loading...</span></p>
+                <p><strong>Endpoint:</strong> <span id="server-endpoint">Loading...</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4">Devices</h2>
+            <div id="devices" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
