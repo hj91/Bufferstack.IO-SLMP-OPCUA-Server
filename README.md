@@ -1,6 +1,6 @@
 # Bufferstack.IO MCProtocol OPC UA Server
 
-**Version:** 6.7.2  
+**Version:** 6.7.3  
 **Developer:** Bufferstack.IO Analytics Technology, LLP  
 **Copyright:** 2025 Harshad Joshi. All rights reserved.
 
